@@ -1,4 +1,4 @@
-alias Experimental.GenStage
+# alias Experimental.GenStage
 
 defmodule Twitter.Producer do
 	use GenStage
@@ -10,8 +10,7 @@ defmodule Twitter.Producer do
 
 	def init(track) do
 		stream = twitter_stream(track)
-		#stream = bigfile_stream
-		
+
 		{:producer, stream}
 	end
 
@@ -23,9 +22,4 @@ defmodule Twitter.Producer do
 	defp twitter_stream(track) do
 		ExTwitter.stream_filter([track: track], :infinity)
 	end
-
-	defp bigfile_stream do
-		stream = File.stream!("../genstage/stagetest/big.txt",[],:line)
-	end
-
 end

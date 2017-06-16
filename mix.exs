@@ -28,12 +28,14 @@ defmodule Twitter.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [      
+    [
       {:poison, "~> 2.0"},
+      {:hackney, "~> 1.7.0", override: true},
       {:httpoison, "~> 0.9.0"},
       {:oauth, github: "tim/erlang-oauth"},
       {:extwitter, "~> 0.7.2"},
-      {:gen_stage, "~> 0.5"}
+      {:gen_stage, "~> 0.5"},
+      {:sentient, "~> 0.0.2", git: "https://github.com/rdalin82/sentient.git"},
     ]
   end
 end
