@@ -36,6 +36,8 @@ defmodule Twitter.Mixfile do
       {:extwitter, "~> 0.7.2"},
       {:gen_stage, "~> 0.5"},
       {:sentient, "~> 0.0.2", git: "https://github.com/rdalin82/sentient.git"},
+      {:gibran, git: "https://github.com/abitdodgy/gibran.git"},
+      {:stemmer, git: "https://github.com/fredwu/stemmer.git"}
     ]
   end
 end

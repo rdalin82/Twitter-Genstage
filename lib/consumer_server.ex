@@ -11,8 +11,8 @@ defmodule Twitter.ConsumerServer do
     GenServer.call(__MODULE__, :stats)
   end
 
-  def init([], _state) do
-    IO.inspect(self(), "Server starting")
+  def init(%{}) do
+    IO.puts "Sentiment Server starting"
     map = %{}
     state = Map.put_new(map, :sentiment, 0)
     {:ok, state}

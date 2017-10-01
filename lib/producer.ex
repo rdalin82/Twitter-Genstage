@@ -1,5 +1,3 @@
-# alias Experimental.GenStage
-
 defmodule Twitter.Producer do
 	use GenStage
 
@@ -18,6 +16,10 @@ defmodule Twitter.Producer do
 		events = stream |> Enum.take(demand)
 		{:noreply, events, stream}
 	end
+
+  def handle_info(_msg, state) do 
+    {:noreply, [], state} 
+  end 
 
 	defp twitter_stream(track) do
 		ExTwitter.stream_filter([track: track], :infinity)
