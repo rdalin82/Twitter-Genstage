@@ -14,7 +14,7 @@ defmodule Twitter.Consumer do
 
   def handle_events(events, _from, tweets) do
     new_tweets = events |> Enum.map(fn e -> e.text end)
-    new_tweets |> Enum.each(fn t -> IO.inspect([self,t]) end)
+    # new_tweets |> Enum.each(fn t -> IO.inspect([self,t]) end)
 
     IO.puts "sleeping for 10s"
     :timer.sleep(10_000)

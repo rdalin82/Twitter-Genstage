@@ -29,7 +29,7 @@ defmodule Twitter.WordFreqServer do
       -> stop_word?(stop_words, word)
     end)
     words_map = Enum.reduce(list_tweets, %{}, &update_count/2)
-    new_state = Map.merge(state, words_map)
+    new_state = Map.merge(state, words_map, fn(_k, v1, v2) -> v1 + v2 end )
     {:noreply, new_state}
   end
 
