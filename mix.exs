@@ -15,7 +15,7 @@ defmodule Twitter.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     [applications: [:logger, :extwitter,:gen_stage],
-    mod: {Twitter, []}]
+    mod: {Twitter.Application, []}]
   end
 
   # Dependencies can be Hex packages:
@@ -31,7 +31,7 @@ defmodule Twitter.Mixfile do
     [
       {:poison, "~> 2.0"},
       {:hackney, "~> 1.7.0", override: true},
-      {:httpoison, "~> 0.9.0"},
+      {:httpoison, "~> 1.1.0"},
       {:oauth, github: "tim/erlang-oauth"},
       {:extwitter, "~> 0.7.2"},
       {:gen_stage, "~> 0.5"},

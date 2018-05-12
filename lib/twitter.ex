@@ -1,4 +1,4 @@
-defmodule Twitter do
+defmodule Twitter.Application do
 
 	def start(_type, _args) do
 		import Supervisor.Spec
