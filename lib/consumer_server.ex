@@ -23,7 +23,7 @@ defmodule Twitter.ConsumerServer do
     |> Enum.map(fn(tweet)-> Sentient.analyze(tweet) end)
     |> Enum.sum()
     old_value = Map.get(state, :sentiment, 0)
-    new_state = Map.update(state, :sentiment, old_value, &(&1+new_value) )
+    new_state = Map.put(state, :sentiment, new_value)
     {:noreply, new_state}
   end
 
